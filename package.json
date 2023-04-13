@@ -1,0 +1,26 @@
+{
+  "name": "desafioexperian",
+  "version": "1.0.0",
+  "description": "Desafios técnicos para a vada de analista de testes pleno",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffrockx/desafioExperian.git"
+  },
+  "author": "Jefferson Xavier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeffrockx/desafioExperian/issues"
+  },
+  "homepage": "https://github.com/jeffrockx/desafioExperian#readme",
+  "devDependencies": {
+    "cypress": "^12.9.0",
+    "cypress-mochawesome-reporter": "^3.3.0",
+    "cypress-plugin-api": "^2.11.0",
+    "cypress-plugin-steps": "^1.1.1",
+    "eslint-plugin-cypress": "^2.13.2"
+  }
+}

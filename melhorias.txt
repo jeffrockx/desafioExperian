@@ -1,0 +1,4 @@
+Sugestões de Melhorias
+1 - Ter seletores específicos para testes, ex.: data-test="slider-range-month" para haja menos risco de mudanças na lógica ou estilo do frontend quebrarem os testes.
+2 - A página está retornando o erro "Uncaught ReferenceError: WebFont is not defined" é possível que a biblioteca não tenha sido carregada corretamente ou não esteja 
+disponível no momento em que ocódigo está tentando acessá-la, é bom verificar com a equipe de desenvolvimento a respeito.
