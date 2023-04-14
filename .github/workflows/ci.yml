@@ -18,7 +18,7 @@ jobs:
           command: npm run cy:test:api
 
       - name: Uploading artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cypress-report-API
@@ -42,7 +42,7 @@ jobs:
           browser: chrome
 
       - name: Uploading artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cypress-report-chrome-desktop
@@ -66,7 +66,7 @@ jobs:
           browser: firefox
 
       - name: Uploading artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cypress-report-firefox-desktop
@@ -90,7 +90,7 @@ jobs:
           browser: chrome
 
       - name: Uploading artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cypress-report-chrome-mobile
@@ -114,7 +114,7 @@ jobs:
           browser: firefox
 
       - name: Uploading artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: cypress-report-firefox-mobile
