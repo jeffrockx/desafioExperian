@@ -1,4 +1,38 @@
-Sugestões de Melhorias
-1 - Ter seletores específicos para testes, ex.: data-test="slider-range-month" para haja menos risco de mudanças na lógica ou estilo do frontend quebrarem os testes.
-2 - A página está retornando o erro "Uncaught ReferenceError: WebFont is not defined" é possível que a biblioteca não tenha sido carregada corretamente ou não esteja 
-disponível no momento em que ocódigo está tentando acessá-la, é bom verificar com a equipe de desenvolvimento a respeito.
+* E2E - Sugestões de Melhorias
+    - 1 - Ter seletores específicos para testes, ex.: data-test="slider-range-month" para haja menos risco de mudanças na lógica ou estilo do frontend quebrarem os testes.
+    - 2 - A página está retornando o erro "Uncaught ReferenceError: WebFont is not defined" é possível que a biblioteca não tenha sido carregada corretamente ou não esteja 
+    disponível no momento em que ocódigo está tentando acessá-la, é bom verificar com a equipe de desenvolvimento a respeito.
+
+* Respostas Testes API
+Todos as respostas foram implementadas em scripts em "cypress/api/bankAPI.cy.js"
+
+1 - Busque o token de autenticação e utilize-o nas próximas requests das APIs implementadas. Você deve passar esse dado do Token como Authorization: Type ‘bearer token’.
+R: Foi necessário fazer um GET para o endpoint /auth, o correto para buscar credenciais seria através do método POST, para não expor os dados na url da requisição.
+
+2 - Quais são os métodos e a URL que devem ser chamados para retornar todos os bancos cadastrados e qual é o retorno dessa chamada? 
+R: Deve ser feita uma requisição do tipo GET para a url: https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/bank, o retorno é um array com todos os bancos.
+
+3 - Como realizar uma chamada na URL para retornar os bancos do estado de SC? Não esqueça de usar query parameters.
+R: Esta é a requisição que deve ser realizada: https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/bank?estadoAtuacao=SC
+
+4 - Realize alteração das informações do Banco do Brasil na API para: ‘estadoAtuacao’: ‘SP’ e valor de ‘juros’: 15,00 usando o campo ‘ID’:
+R: Neste caso devemos utilizar o método PUT para o endpoint /bank?id=1 e passar no body, os dados a serem alterados.
+
+5 - Adicione um novo banco com os seguintes dados: Dados: Banco Teste, SC, 10,00%.
+R: Devemos utilizar o método POST para o endpoint /bank passando no body o payload 'banco': 'Banco Teste', 'estadoAtuacao': 'SC', 'juros': '10,00%'
+
+6 - Considere que estas APIs vieram no fluxo de trabalho para você testar e agora é o momento de identificar todos os cenários de teste. 
+escreva-os abaixo considerando testes funcionais e não funcionais:
+
+Testes funcionais:
+
+1 - Dado que vou buscar um banco inexistente, quando realizo a requisição do tipo GET para o endpoinp /bank?id=a1b2c3, então 
+deveria retornar erro e mensagem informando que o banco não existe.
+
+2 - Dado que vou buscar todos os bancos, quando não inform o token de autenticação, então deveria retornar erro 401 – Unauthorized.
+
+3 - Dado que vou criar um banco, quando não informo os campos necessários, então deveria retornar mensagem informando que os campos são requeridos.
+
+Testes não funcionais:
+
+1 - Dado que vou criar um novo banco, quando realizo a requisição, então o tempo de resposta deve ser menor que 350ms

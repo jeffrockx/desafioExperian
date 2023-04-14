@@ -20,7 +20,7 @@ Para instalar as dependências de desenvolvimento, estando na pasta raíz do pro
 `e2e` - Pasta onde ficam os scripts de testes.  
 `fixtures` - Pasta destinada a arquivos a serem utilizados nos testes ou mocks e etc..  
 `support` - Pasta geralmente utilizada para criação de comandos customizados, funções, migrations...  
-**Obs:** Os comandos customizados podem importados dentro de cada arquivo de teste ou no arquivo e2e.js da pasta support ao executar um teste o cypress carrega todas as configurações deste arquivo antes da execução.  
+**Obs:** Os comandos customizados podem importados dentro de cada arquivo de teste ou no arquivo e2e.js da pasta support, ao executar um teste o cypress carrega todas as configurações deste arquivo antes da execução.  
 
 ## Executando os testes manualmente
 
