@@ -1,10 +1,11 @@
 {
   "name": "desafioexperian",
   "version": "1.0.0",
-  "description": "Desafios técnicos para a vada de analista de testes pleno",
+  "description": "Desafios técnicos para a vaga de analista de testes pleno",
   "main": "index.js",
   "scripts": {
     "cy:run": "cypress run",
+    "cy:test:api": "cypress run --spec 'cypress/api/**'",
     "cypress:run:mobile": "cypress run --config viewportWidth=375,viewportHeight=667",
     "cy:run:chrome": "cypress run --browser chrome",
     "cy:run:chrome:mobile": "cypress run --browser chrome --config viewportWidth=375,viewportHeight=667",

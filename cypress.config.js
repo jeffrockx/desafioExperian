@@ -2,9 +2,8 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   watchForFileChanges: false,
-  numTestsKeptInMemory: 3,
   retries: {
-    runMode: 2,
+    runMode: 1,
     openMode: 0,
   },
   reporter: 'cypress-mochawesome-reporter',
@@ -19,6 +18,8 @@ module.exports = defineConfig({
 
   e2e: {
     baseUrl: 'https://www.serasa.com.br/ecred/simulador',
+    specPattern: ['cypress/e2e/**/*.{js,jsx,ts,tsx}', 'cypress/api/**/*.{js,jsx,ts,tsx}'],
+
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
     },

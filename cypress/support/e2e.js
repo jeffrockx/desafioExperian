@@ -23,7 +23,9 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './api_commands'
+import './e2e_commands'
+import 'cypress-plugin-api'
 import 'cypress-plugin-steps'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

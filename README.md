@@ -1,4 +1,4 @@
-# Desafio Testes _end-to-end_ com Cypress
+# Desafio Experian Testes _end-to-end_ e de _API_  
 
 Testes end-to-end (e2e) escritos com Cypress
 
@@ -6,8 +6,8 @@ Testes end-to-end (e2e) escritos com Cypress
 
 Para executar este projeto, você precisa:
 
-- [nodejs](https://nodejs.org/en/) (Usando a versão `16.14.2` enquanto escrevo este doc)
-- [NPM] (Usando a versão `8.5.0` enquanto escrevo este doc)
+- [nodejs](https://nodejs.org/en/) (Usando a versão `18.15.0` enquanto escrevo este doc)
+- [NPM] (Usando a versão `9.5.0` enquanto escrevo este doc)
 
 **Nota:** Quando instalamos o nodejs, o NPM é automaticamente instalado também.
 
@@ -28,13 +28,19 @@ Neste projeto, você pode executar os teste em modo interativo ou em modo headle
 
 ### Modo Headless
 
-Na raiz do projeto rode `npm cy:test` ou `npx cypress run` para executar todos os teste em modo headless.  
+Na raiz do projeto rode `npm cy:run` ou `npx cypress run` para executar todos os teste em modo headless.  
 
 Caso necessite executar apenas uma pasta ou arquivo específico, basta passar a flag --spec, seguida do caminho da pasta ou arquivo: `npx cypress run "cypress/e2e/arquivo.cy.js"`
+
+Para os testes de `API` execute o comando `npx cypress run --spec "cypress/api/**"` ou `npm cy:test:api`
 
 ### Modo Interativo
 
 Na raiz do projeto rode `npx cypress open` ou `npm cy:open`  para abrir o Cypress Test Runner e executar os teste em modo interativo.
+
+## Relatório de execução
+
+Estamos utilizando o plugin `cypress-mochawesome-reporter` para gerar o relatório com os resultados dos testes, ao fim da execução verifique o arquivo `index.html` na pasta `cypress/results`
 
 ## Plugins utilizados
 
