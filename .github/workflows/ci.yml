@@ -3,6 +3,28 @@ name: Cypress E2E Tests
 on: push
 
 jobs:
+  cypress-tests-API:
+    runs-on: ubuntu-latest
+    container: cypress/included:cypress-12.9.0-node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: E2E tests on chrome - Desktop viewport
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run cy:test:api
+
+      - name: Uploading artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-report-API
+          path: cypress/results
+          retencion-days: 15
+
   cypress-tests-desktop-chrome:
     runs-on: ubuntu-latest
     container: cypress/included:cypress-12.9.0-node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
