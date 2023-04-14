@@ -23,7 +23,7 @@ jobs:
         with:
           name: cypress-report-API
           path: cypress/results
-          retencion-days: 15
+          retention-days: 15
 
   cypress-tests-desktop-chrome:
     runs-on: ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
         with:
           name: cypress-report-chrome-desktop
           path: cypress/results
-          retencion-days: 15
+          retention-days: 15
 
   cypress-tests-desktop-firefox:
     runs-on: ubuntu-latest
@@ -71,7 +71,7 @@ jobs:
         with:
           name: cypress-report-firefox-desktop
           path: cypress/results
-          retencion-days: 15
+          retention-days: 15
 
   cypress-tests-desktop-chrome-mobile:
     runs-on: ubuntu-latest
@@ -95,7 +95,7 @@ jobs:
         with:
           name: cypress-report-chrome-mobile
           path: cypress/results
-          retencion-days: 15
+          retention-days: 15
 
   cypress-tests-desktop-firefox-mobile:
     runs-on: ubuntu-latest
@@ -119,4 +119,4 @@ jobs:
         with:
           name: cypress-report-firefox-mobile
           path: cypress/results
-          retencion-days: 15
+          retention-days: 15
