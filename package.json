@@ -4,7 +4,17 @@
   "description": "Desafios técnicos para a vada de analista de testes pleno",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:run": "cypress run",
+    "cypress:run:mobile": "cypress run --config viewportWidth=375,viewportHeight=667",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:chrome:mobile": "cypress run --browser chrome --config viewportWidth=375,viewportHeight=667",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:run:firefox:mobile": "cypress run --browser firefox --config viewportWidth=375,viewportHeight=667",
+    "cy:open": "cypress open --e2e",
+    "cy:open:chrome": "cypress open --e2e --browser chrome",
+    "cy:open:chrome:mobile": "cypress open --browser chrome --config viewportWidth=375,viewportHeight=667",
+    "cy:open:firefox": "cypress open --e2e --browser firefox",
+    "cy:open:firefox:mobile": "cypress open --browser firefox --config viewportWidth=375,viewportHeight=667"
   },
   "repository": {
     "type": "git",

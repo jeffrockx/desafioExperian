@@ -17,11 +17,10 @@ Para instalar as dependências de desenvolvimento, estando na pasta raíz do pro
 
 ## Estrutura de pastas
 
-`e2e` - Pasta onde ficam os scripts de testes.
-`fixtures` - Pasta destinada a arquivos a serem utilizados nos testes ou mocks e etc..
-`support` - Pasta geralmente utilizada para criação de comandos customizados, funções, migrations...
-**Obs:** Os comandos customizados podem importados dentro de cada arquivo de teste ou no arquivo e2e.js da pasta support  
-ao executar um teste o cypress carrega todas as configurações deste arquivo antes da execução.  
+`e2e` - Pasta onde ficam os scripts de testes.  
+`fixtures` - Pasta destinada a arquivos a serem utilizados nos testes ou mocks e etc..  
+`support` - Pasta geralmente utilizada para criação de comandos customizados, funções, migrations...  
+**Obs:** Os comandos customizados podem importados dentro de cada arquivo de teste ou no arquivo e2e.js da pasta support ao executar um teste o cypress carrega todas as configurações deste arquivo antes da execução.  
 
 ## Executando os testes manualmente
 
@@ -39,14 +38,14 @@ Na raiz do projeto rode `npx cypress open` ou `npm cy:open`  para abrir o Cypres
 
 ## Plugins utilizados
 
-`cypress-mochawesome-reporter` - Utilzado gerar um relatório html ao final das execuções em modo headless, este relatório fica no caminho: "cypress/reports/html/index.html".
-**Para mais detalhes consultar a documentação**: https://www.npmjs.com/package/cypress-mochawesome-reporter
+`cypress-mochawesome-reporter` - Utilzado gerar um relatório html ao final das execuções em modo headless, este relatório fica no caminho: "cypress/reports/html/index.html".  
+**Para mais detalhes consultar a documentação**: https://www.npmjs.com/package/cypress-mochawesome-reporter  
 
-`Cypress Steps plugin` - Adiciona etapas na linha do tempo e nos logs de erros.
-**Para mais detalhes consultar a documentação**: https://github.com/filiphric/cypress-plugin-steps
+`Cypress Steps plugin` - Adiciona etapas na linha do tempo e nos logs de erros.  
+**Para mais detalhes consultar a documentação**: https://github.com/filiphric/cypress-plugin-steps  
 
-`Cypress ESLint Plugin` - Adiciona análise estática de código ao projeto de testes.
-**Para mais detalhes consultar a documentação**: https://github.com/cypress-io/eslint-plugin-cypress
+`Cypress ESLint Plugin` - Adiciona análise estática de código ao projeto de testes.  
+**Para mais detalhes consultar a documentação**: https://github.com/cypress-io/eslint-plugin-cypress  
 
-`Cypress plugin API` - Este plugin sobrescreve o cy.request, possibilitando visualizar informações das chamadas de API na tela de execução do cypress, algo semelhante ao postman.
-**Para mais detalhes consultar a documentação**: https://github.com/filiphric/cypress-plugin-api
+`Cypress plugin API` - Este plugin sobrescreve o cy.request, possibilitando visualizar informações das chamadas de API na tela de execução do cypress, algo semelhante ao postman.  
+**Para mais detalhes consultar a documentação**: https://github.com/filiphric/cypress-plugin-api  

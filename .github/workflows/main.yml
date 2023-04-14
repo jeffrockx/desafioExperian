@@ -1,0 +1,100 @@
+name: Cypress E2E Tests
+
+on: push
+
+jobs:
+  cypress-tests-desktop-chrome:
+    runs-on: ubuntu-latest
+    container: cypress/included:cypress-12.9.0-node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: E2E tests on chrome - Desktop viewport
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run cy:run:chrome
+          # Specify Browser since container image is compiled with Firefox
+          browser: chrome
+
+      - name: Uploading artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-report-chrome-desktop
+          path: cypress/results
+          retencion-days: 15
+
+  cypress-tests-desktop-firefox:
+    runs-on: ubuntu-latest
+    container: cypress/included:cypress-12.9.0-node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: E2E tests on firefox - Desktop viewport
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run cy:run:firefox
+          # Specify Browser since container image is compiled with Firefox
+          browser: firefox
+
+      - name: Uploading artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-report-firefox-desktop
+          path: cypress/results
+          retencion-days: 15
+
+  cypress-tests-desktop-chrome-mobile:
+    runs-on: ubuntu-latest
+    container: cypress/included:cypress-12.9.0-node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: E2E tests on chrome mobile - Desktop viewport
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run cy:run:chrome:mobile
+          # Specify Browser since container image is compiled with Firefox
+          browser: chrome
+
+      - name: Uploading artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-report-chrome-mobile
+          path: cypress/results
+          retencion-days: 15
+
+  cypress-tests-desktop-firefox-mobile:
+    runs-on: ubuntu-latest
+    container: cypress/included:cypress-12.9.0-node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: E2E tests on firefox - Mobile viewport
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run cy:run:firefox:mobile
+          # Specify Browser since container image is compiled with Firefox
+          browser: firefox
+
+      - name: Uploading artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-report-firefox-mobile
+          path: cypress/results
+          retencion-days: 15
