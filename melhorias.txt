@@ -24,15 +24,35 @@ R: Devemos utilizar o método POST para o endpoint /bank passando no body o payl
 6 - Considere que estas APIs vieram no fluxo de trabalho para você testar e agora é o momento de identificar todos os cenários de teste. 
 escreva-os abaixo considerando testes funcionais e não funcionais:
 
-Testes funcionais:
+6.1 - Testes funcionais:
 
-1 - Dado que vou buscar um banco inexistente, quando realizo a requisição do tipo GET para o endpoinp /bank?id=a1b2c3, então 
+6.1.1 - Dado que vou buscar um banco inexistente, quando realizo a requisição do tipo GET para o endpoinp /bank?id=a1b2c3, então 
 deveria retornar erro e mensagem informando que o banco não existe.
 
-2 - Dado que vou buscar todos os bancos, quando não inform o token de autenticação, então deveria retornar erro 401 – Unauthorized.
+6.1.2 - Dado que vou buscar todos os bancos, quando não inform o token de autenticação, então deveria retornar erro 401 – Unauthorized.
 
-3 - Dado que vou criar um banco, quando não informo os campos necessários, então deveria retornar mensagem informando que os campos são requeridos.
+6.1.3 - Dado que vou criar um banco, quando não informo os campos necessários, então deveria retornar mensagem informando que os campos são requeridos.
 
-Testes não funcionais:
+6.2 - Testes não funcionais:
 
-1 - Dado que vou criar um novo banco, quando realizo a requisição, então o tempo de resposta deve ser menor que 350ms
+6.2.1 - Dado que vou criar um novo banco, quando realizo a requisição, então o tempo de resposta deve ser menor que 350ms
+
+7 -	Você encontrou algum erro nestes testes? Caso sim, como reportaria ao desenvolvedor a situação encontrada? Descreva abaixo:
+
+Considere os níveis de criticidade: ALTO, MÉDIO e BAIXO. Como você classificaria o nível de cada um destes erros encontrados?
+
+Erro 1: Dado que estou realizando requisições para buscar um banco, quando passo um banco inexistente por query parameters,
+então ao invés de informar que o banco não existe, está me retornando a listagem de todos os bancos.
+Criticidade: Baixa
+
+Erro 2: Dado que estou realizando requisições do tipo POST para inclusão de um banco, quando não passo um body, então a API
+não está informando que não foram passados os campos necessários.
+Criticidade: Média
+
+Erro 3: Dado que estou realizando busca de informações de bancos com o método GET, quando não passo no header o token de autenticação,
+então a API não informa erro 401 – Unauthorized e retorna os dados mesmo assim.
+Criticidade: Alta
+
+8 -	Conhece sobre automação de teste de API? Caso sim, implemente um projeto com os seus cenários de testes descritos no item 6.
+R: Os scripts de testes estão no caminho "cypress/api/bankAPI.cy.js", as informações sobre como executar o projeto e rodar os testes
+estão no arquivo README.md na raiz do projeto.
